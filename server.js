@@ -11,6 +11,7 @@ app.use(express.json())
 app.use(cors({
     origin: [
       'http://localhost:5300',
+      'https://register-login-form-frontend.vercel.app'
     ],
     methods: ['GET', 'POST' , 'PUT'],
     credentials: true
