@@ -17,7 +17,7 @@ router.get('/profile' , (req , res) =>{
   })
 })
 
-router.post('/edited' , (req , res) =>{
+router.put('/edited' , (req , res) =>{
   try {
     const updatedData = req.body
     if (!updatedData) {

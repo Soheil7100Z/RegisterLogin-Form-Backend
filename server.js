@@ -12,13 +12,12 @@ app.use(cors({
     origin: [
       'http://localhost:5300',
     ],
-    methods: ['GET', 'POST'],
+    methods: ['GET', 'POST' , 'PUT'],
     credentials: true
   }));
 
 app.use('/' , authRouter)
 app.use('/protected' , authMiddleware , profileRouter)
-app.use('/' , profileRouter)
 app.get('/' , (req , res) => {
   res.send('login server is working')
 })
