@@ -26,7 +26,7 @@ router.post('/register' , async (req , res) => {
     const sql = 'INSERT INTO users (first_name , last_name , email , password , location) VALUES (?,?,?,?,?)'
     db.query(sql , [first_name , last_name , email , hasshedPassword , location] , (err , result) =>{
       if (err) {
-      // console.error(err);
+      console.error('register-databse',err);
       return res.status(500).json({ message: 'Interne Databasefehler ist aufgetreten'})
       }
       // console.log(result)
@@ -55,7 +55,7 @@ router.post('/login' , (req , res) => {
     const sql = 'SELECT * FROM users WHERE email = ?'
     db.query(sql , [email] , async (error , result) => {
       if (error) {
-        // console.log(error)
+        console.log('login-databse',error)
         return res.status(500).json({status: '500' ,message: 'Interner Datenbankfehler'})
       }
       const users = result

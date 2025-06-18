@@ -11,7 +11,7 @@ router.get('/profile' , (req , res) =>{
   const sql = 'SELECT * FROM users WHERE email = ?'
   db.query(sql , [user.email] , (error , result) =>  {
     if (error) {
-      // console.log(error)
+      console.log('profile-Database:',error)
     }
     res.json({ message: 'Willkommen auf der geschützten Route!', user: result });
   })
@@ -30,7 +30,7 @@ router.put('/edited' , (req , res) =>{
     const sql = 'UPDATE users SET first_name = ? , last_name = ? , location = ? WHERE id = ?;'
     db.query(sql , [first_name , last_name , location , id] , (error , result) => {
       if (error) {
-      // console.error(err)
+      console.error('edited-Database',err)
       return res.status(500).json({ message: 'Databasefehler beim Aktualisieren' });
     }
     // console.log(result)
