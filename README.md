@@ -2,10 +2,6 @@
 
 An Express.js backend for handling user registration, login, authentication, and access to protected user profile data.
 
-## 🌐 Live URL
-
-- [Backend on Render](https://registerlogin-form-backend.onrender.com)
-
 ## 🔍 Features
 
 - **Endpoints in route auth**:
